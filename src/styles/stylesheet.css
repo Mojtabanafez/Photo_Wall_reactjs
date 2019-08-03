@@ -1,0 +1,58 @@
+html{
+    font-size: 10px;
+    font-family: 'sans-serif' 
+}
+p{
+    font-size: 1.6rem;
+    line-height: 1.5
+}
+h1{
+    font-family: 'billabong';
+    text-align: center;
+    font-size: 13rem;
+    font-weight: 100;
+    margin: 2rem 0;
+    letter-spacing: -1px;
+    color:black;
+}
+
+@font-face {
+font-family: 'Billabong';
+src: local('Billabong'), url('Billabong.woff') format('woff');
+}
+.photoGrid{
+    max-width: 1000px;
+    margin: 0 auto 0;
+    flex-wrap:wrap;
+    display: flex;
+}
+.figure{
+    border: 4px solid #d3d3d3;
+    flex-basis: calc(33.333% - 4rem);
+    padding :2rem;
+    height: 400px;
+    flex-grow: 1;
+    margin:0 2rem 2rem 2rem; 
+}
+.Photo{
+    width: calc(100% + 4rem);
+    height: 80%;
+    margin:-2rem 0rem 0rem -2rem;
+}
+.button-conrainer{
+    border: 4px solid #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.remove-button {
+    flex-basis: 48%;
+    justify-content: center;
+    border: 4px solid #d3d3d3;
+
+    color: red;
+    font-size: 15px;
+    border:2px solid #f2f2f2;
+    line-height: 2;
+    padding:5px;
+}
