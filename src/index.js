@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import Main from './Components/Main'
 import './styles/stylesheet.css'
+import {BrowserRouter} from 'react-router-dom'
 
 
 // const tasks = ['take out the trash', 'shovel the deiveway', 'walk the dog ']
@@ -61,4 +62,4 @@ class Main extends Component {
 }
 */
 
-ReactDom.render(<Main />, document.getElementById('root'));
+ReactDom.render(<BrowserRouter><Main /></BrowserRouter>, document.getElementById('root'));
