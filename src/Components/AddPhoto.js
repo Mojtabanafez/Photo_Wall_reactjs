@@ -16,16 +16,15 @@ class Addphoto extends Component {
             imageLink:imagelink
         }
         
-        if (description && imagelink){    
-            this.props.onAddPhoto(post);
+        if (description && imagelink){   
+            this.props.addPost(post)
+            this.props.onHistory.push('/')
         }
-
     }
-
     render() {
         return (
             <div>
-                <h1>Photowall</h1>
+
                 <div>
                     <form className="form" onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="Link" name="link"/>
