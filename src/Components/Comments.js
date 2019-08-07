@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { log } from 'util';
-
-class Comments extends Component {
+import { log } from 'util';class Comments extends Component {
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +18,7 @@ class Comments extends Component {
                         return (
                             <p key={index}>{comment}</p>
                         )
-                    })                    
+                    })
                 }
                 <form className="comment-form" onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="comment" name="comment" />
@@ -30,5 +28,4 @@ class Comments extends Component {
         )
     }
 }
-
 export default Comments;

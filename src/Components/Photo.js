@@ -1,29 +1,8 @@
 import React, { Component } from 'react'
-<<<<<<< Updated upstream
-=======
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-// import {removedPost} from '../redux/action'
 import { Link } from 'react-router-dom'
->>>>>>> Stashed changes
 
-// class Photo extends Component {
-//     render(){
-//         const post = this.props.post;
-//         return <figure className="figure">
-//             <img className="Photo" src={post.imageLink} alt={post.description}>
-//             </img>
-//             <figcaption>
-//                 <p>
-//                     {post.description}
-//                 </p>
-//             </figcaption>
-//             <div className = "button-container">
-//                 <button> Remove </button>
-//             </div>
-//         </figure>
-//     }
-// }
 function Photo(props) {
     const post = props.post;
     return <figure className="figure">
@@ -36,25 +15,23 @@ function Photo(props) {
             </p>
         </figcaption>
         <div className="button-container">
-<<<<<<< Updated upstream
-            <button className="remove-button"> Remove </button>
-=======
             <button onClick={() => {
-                //  زمانی که dispatch تحریک می‌شود، متعاقباً store تابع reducer را فراخوانی می‌کند 
+                console.log(props.posts);
                 props.removedPost(props.index);
                 props.history.push('/');
-                //  اگه mapDispathToProps تو App.js نباشه:
-                // props.dispatch(removedPost(props.index)) 
             }}> Remove </button>
-            <Link to={`/single/${post.id}`} className="button">
+            <Link className="button" to={`single/${post.id}`}>
                 <div className="comment-count">
-                    <div className="speech-bubble"></div>
-                    {props.comments[post.id] ? props.comments[post.id].length : 0 }
+                    <div className="speech-bubble">
+                        {props.comments[post.id] ? props.comments[post.id].length : 0}
+                    </div>
                 </div>
             </Link>
->>>>>>> Stashed changes
         </div>
     </figure>
 }
-
+Photo.propTypes = {
+    post: PropTypes.object.isRequired,
+}
+console.log("this is Photo");
 export default Photo;
