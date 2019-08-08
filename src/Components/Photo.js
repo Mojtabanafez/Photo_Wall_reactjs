@@ -28,7 +28,22 @@ function Photo(props) {
             </p>
         </figcaption>
         <div className="button-container">
+<<<<<<< Updated upstream
             <button className="remove-button"> Remove </button>
+=======
+            <button onClick={() => {
+                console.log(props.posts);
+                props.startRemovingPosts(props.index, post.id);
+                props.history.push('/');
+            }}> Remove </button>
+            <Link className="button" to={`single/${post.id}`}>
+                <div className="comment-count">
+                    <div className="speech-bubble">
+                        {props.comments[post.id] ? props.comments[post.id].length : 0}
+                    </div>
+                </div>
+            </Link>
+>>>>>>> Stashed changes
         </div>
     </figure>
 }

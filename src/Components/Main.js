@@ -17,6 +17,7 @@ import Photowall from './PhotoWall'
 // }]
 
 class Main extends Component {
+<<<<<<< Updated upstream
     constructor(){
         super();
         this.state = {
@@ -33,6 +34,10 @@ class Main extends Component {
                 imageLink: "https://www.goodfreephotos.com/cache/italy/other-italy/beautiful-landscape-with-mountains-and-lakes-with-sky-in-italy_800.jpg?cached=1522446501"
             }]
         }
+=======
+    componentDidMount(){
+        this.props.startLoadingPost();  
+>>>>>>> Stashed changes
     }
     // render() {
     //     return <div>
