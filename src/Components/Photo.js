@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Photo(props) {
-    const post = props.post;
+    const post = props.post;    
     return <figure className="figure">
         <Link to={`/single/${post.id}`}>
             <img className="photo" src={post.imageLink} alt={post.description} />
@@ -20,7 +20,7 @@ function Photo(props) {
                 props.startRemovingPosts(props.index, post.id);
                 props.history.push('/');
             }}> Remove </button>
-            <Link className="button" to={`single/${post.id}`}>
+            <Link className="button" to={`/single/${post.id}`}>
                 <div className="comment-count">
                     <div className="speech-bubble">
                         {props.comments[post.id] ? props.comments[post.id].length : 0}

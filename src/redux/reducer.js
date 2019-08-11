@@ -1,7 +1,7 @@
 import _posts from '../data/posts'
 import { combineReducers } from 'redux'
 
-function comments(state = {}, action){
+function comments(state = {}, action) {
     switch (action.type) {
         case 'ADD_COMMENT': {
             if (!state[action.postId]) {
@@ -9,7 +9,11 @@ function comments(state = {}, action){
             } else {
                 return { ...state, [action.postId]: [...state[action.postId], action.comment] }
             }
-        } default: return state;
+        } break;
+        case 'LOAD_COMMENTS': {
+            return action.comments
+        } break;
+        default: return state;
     }
 }
 function posts(state = _posts, action) {
@@ -20,9 +24,9 @@ function posts(state = _posts, action) {
         case 'ADD_POST': {
             return [...state, action.post]
         }
-        case 'LOAD_POSTS':{
+        case 'LOAD_POSTS': {
             return action.posts;
-        }break;
+        } break;
         default: return state;
     }
 }

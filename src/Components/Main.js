@@ -7,12 +7,17 @@ import { removedPost } from '../redux/action'
 import Single from './Single';
 
 class Main extends Component {
+
+    state={Loading:true};
+
     componentDidMount(){
-        this.props.startLoadingPost();  
+        
+        this.props.startLoadingPost().then(()=>{
+            this.state.Loading = false;
+        });
+        this.props.startLoadingComments(); 
     }
     render() {
-        console.log(this.props.posts);
-        
         return < div >
             <h1>
                 <Link to="/">Photowall</Link>
@@ -27,7 +32,7 @@ class Main extends Component {
                 <AddPhoto {...this.props} onHistory={history} />
             } />
             <Route path="/single/:id" render={(params) => (
-                <Single {...this.props} {...params} />
+                <Single Loading = {this.state.Loading} {...this.props} {...params} />
             )} />
         </div >
     }
